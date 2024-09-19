@@ -27,10 +27,10 @@ const catControllers ={
     },
     updateCat: (req,res)=>{
         const {id}=req.params;
-        console.log('Received ID:', id);
+        
         const{name,age} = req.body;
         const catExist = cats.find((cat)=>cat.id === parseInt(id));
-        console.log('Found Cat:', catExist);
+       // console.log('Found Cat:', catExist);
         if(catExist)
         {
         if( name && age)
