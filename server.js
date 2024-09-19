@@ -1,12 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
 
-
+import router from './routes/cat.js'
 
 
 // configure dotenv
 dotenv.config();
-const PORT = process.env.PORT || 5009;
+const PORT = process.env.PORT || 5003;
 
 
 
@@ -18,8 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // use routes
-
-
+app.use('/', router);
 // error
 app.use((err, req, res, next) => {
     console.error(err);
